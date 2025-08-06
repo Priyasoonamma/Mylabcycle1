@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+body {
+    background: whitesmoke;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background:transparent;
+    width: 400px;
+    overflow: hidden;
+    box-shadow: none;
+    border: none; 
+}
+
+.tabs {
+    display: flex;
+}
+
+.tablinks {
+    flex: 1;
+    padding: 15px 0;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tablinks:hover {
+    color: green;
+}
+
+.tablinks:first-child.active {
+    color: blueviolet;
+}
+
+.tablinks:last-child.active {
+    color: #667eea;
+}
+
+.tablinks.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+}
+
+.tablinks:first-child.active::after {
+    background: #764ba2;
+}
+
+.tablinks:last-child.active::after {
+    background: #667eea;
+}
+
+.tabcontent {
+    padding: 30px;
+    display: none;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, button {
+    padding: 12px 15px;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0;
+    background: transparent;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: blueviolet;
+    box-shadow: none;
+    outline: none;
+}
+
+button {
+    background: blueviolet;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #667eea;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#error, #newerror {
+    color: red;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
